@@ -3,5 +3,9 @@
 
 for file in *
 do
-	echo "$file"
+	base=$(basename "$file")
+	
+	name=${base#[0-9]*-}
+
+	echo "$name"
 done
