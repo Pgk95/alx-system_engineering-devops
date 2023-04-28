@@ -5,5 +5,5 @@ pids=$(pgrep -f bash)
 
 for pid in $pids; do
     name=$(ps -p "$pid" -o comm=)
-    printf "%-10s %-20s\n" "$pid" "$name"
+    printf "%-s %-s\n" "$pid" "$name"
 done
