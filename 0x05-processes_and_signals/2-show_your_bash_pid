@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays lines containing the bash word
+# shellcheck disable=SC2009
+
+printf "%-10s %-20s\n" "PID" "COMMAND"
+
+ps axo pid,comm --no-header | grep -i bash | awk '{printf("%-10s %-20s\n", $1, $2)}'

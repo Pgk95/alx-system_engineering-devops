@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # This script displays a list of currently running processes
 
+
 printf "%-10s %-20s %-10s %-10s\n" "PID" "COMMAND" "CPU" "PPID"
 
 ps axo pid,comm,%cpu,ppid --no-header | awk '{printf("%-10s %-20s %-10s %-10s\n", $1, $2, $3, $4)}'
