@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays a loop that prints a string and sleep for 2 in each iteration.
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
