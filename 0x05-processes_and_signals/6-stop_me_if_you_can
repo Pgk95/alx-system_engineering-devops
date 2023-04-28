@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script kills the process
+
+if [ $# -eq 0 ]; then
+    if [ -f "4-to_infinity_and_beyond" ]; then
+        process_name=$(cat 4-to_infinity_and_beyond)
+    else
+        exit 1
+    fi
+else
+    process_name="$1"
+fi
+
+pkill "$process_name"
