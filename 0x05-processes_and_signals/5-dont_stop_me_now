@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script kills or stop "4-to_infinity_and_beyond"
+
+if [ $# -eq 0 ]; then
+	if [ -f "4-to_infinity_and_beyond" ]; then
+		file_name=$(cat 4-to_infinity_and_beyond)
+	else
+		exit 1
+	fi
+else
+	file_name="$1"
+fi
+
+pid=$(pgrep "$file_name")
+
+if [ -z "$pid" ]; then
+	exit 1
+fi
+
+Kill "$pid" >/dev/null 2>&1
