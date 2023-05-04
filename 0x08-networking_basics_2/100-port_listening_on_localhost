@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script is listens on port 98 on localhost.
+# This script listens on port 98 on localhost using the comannd telnet.
 
 nc -l localhost 98
