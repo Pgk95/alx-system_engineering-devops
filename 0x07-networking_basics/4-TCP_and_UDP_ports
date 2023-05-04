@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script is displaying/showing listening ports.
+
+netstat -tlnp |
+
+grep LISTEN |
+
+awk '{print $7}' |
+
+while read -r line; do
+	name=$(lsof -p "${line%/*}" | awk 'NR==2 {print $1}')
+
+	echo "PID: ${line%/*} Name: \"$name\""
+done

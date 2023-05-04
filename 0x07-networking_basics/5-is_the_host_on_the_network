@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This pings an ip address passed as an argument and display the time taken to reach from it to specified ip.
+
+if [ -z "$1" ]; then
+	echo "Usage: ${0#./} {IP_ADDRESS}" 
+	exit 1
+fi
+
+ping -c 5 "$1"
