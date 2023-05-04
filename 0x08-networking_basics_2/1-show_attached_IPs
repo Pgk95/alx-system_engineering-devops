@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is diplaying all active IPV$ IPs on the machine it's executed on.
+
+ip -o addr show scope global | awk '{split($4,a,"/"); print a[1]}'
