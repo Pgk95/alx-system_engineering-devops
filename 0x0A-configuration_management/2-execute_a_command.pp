@@ -1,6 +1,5 @@
 # this puppet kills process named "killmenow".
 
-exec { 'killmenow':
-  command     => 'pkill -f killmenow',
-  path        => '/usr/bin/:/usr/local/bin/:/bin/',
+exec { 'pkill -f killmenow':
+  path => '/usr/bin/:/usr/local/bin/:/bin/'
 }
