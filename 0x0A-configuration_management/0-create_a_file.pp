@@ -1,3 +1,5 @@
+# this Puppet code creates file in '/tmp/school' containing the string.
+
 file { '/tmp/school':
   ensure  => file,
   mode    => '0744',
