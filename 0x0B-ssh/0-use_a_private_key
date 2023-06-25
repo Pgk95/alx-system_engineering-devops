@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# this script uses a priate key and user name to connect.
+# this script uses a private key and username to connect.
 ssh -i ~/.ssh/school ubuntu@server
