@@ -1,3 +1,4 @@
+# this puppet script let you connect to a server without typing a password
 file { '/root/.ssh/config':
   ensure  => present,
   content => "Host your_server\n\
