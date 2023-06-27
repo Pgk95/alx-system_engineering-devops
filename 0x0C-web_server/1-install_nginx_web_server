@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# configures a new machine and install nginx
+
+sudo apt update
+
+sudo apt install -y nginx
+
+sudo sed i 's/^\(listen\s*\)80;/\180;/' /etc/nginx/sites-available/default
+
+sudo service nginx restart
+
+echo "Hello world!" | sudo tree /var/www/html/index.html >/dev/null
+
+sudo service nginx status
