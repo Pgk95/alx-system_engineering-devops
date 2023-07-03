@@ -1,3 +1,4 @@
+# Creats a custom HTTP header response
 class { 'nginx':
   service_manage => true,
 }
