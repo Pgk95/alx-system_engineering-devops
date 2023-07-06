@@ -4,20 +4,17 @@
 display_info() {
 	local domain="$1"
 	local sub_domain="$2"
-	local record_type
 	local destination
 
 	if [[ -z "$sub_domain" ]]; then
 		default_sub_domain=("www" "lb-01" "web-01" "web-02")
 		for default_sub_domain in "${default_sub_domain[@]}"; do
-			record_type=$(dig +short "$default_sub_domain.$domain" | awk '{print $4}')
 			destination=$(dig +short "$default_sub_domain.$domain" | awk '{print $1}')
-			echo "The subdomain $default_sub_domain is a A $record_type record and points to $destination"
+			echo "The subdomain $default_sub_domain is a A record and points to $destination"
 		done
 	else
-		record_type=$(dig +short "$subdomain.$domain" | awk '{print $4}')
-		destination=$(dig +short "$subdomain.$domain" | awk '{print $1}')
-		echo "The subdomain $subdomain is A $record_type record and points to $destination"
+		destination=$(dig +short "$sub_domain.$domain" | awk '{print $1}')
+		echo "The subdomain $subdomain is A record and points to $destination"
 	fi
 }
 
