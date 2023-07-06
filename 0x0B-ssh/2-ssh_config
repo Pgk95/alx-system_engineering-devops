@@ -1,0 +1,6 @@
+Host your_server
+              HostName 54.237.51.224
+              User <username>
+              IdentityFile ~/.ssh/school
+              PreferredAuthentications publickey
+              PasswordAuthentication no
