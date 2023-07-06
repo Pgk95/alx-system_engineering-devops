@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-
 # Install nginx
 apt-get update
 apt-get install -y nginx
@@ -9,11 +7,6 @@ apt-get install -y nginx
 echo "server {
     location /redirect_me {
         return 301 http://example.com/;
-    }
-
-    location / {
-        root /var/www/html;
-        index index.html;
     }
 }" > /etc/nginx/sites-available/default
 
