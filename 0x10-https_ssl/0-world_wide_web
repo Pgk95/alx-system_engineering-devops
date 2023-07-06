@@ -14,7 +14,7 @@ display_info() {
 		done
 	else
 		destination=$(dig +short "$sub_domain.$domain" | awk '{print $1}')
-		echo "The subdomain $subdomain is A record and points to $destination"
+		echo "The subdomain $subdomain is a A record and points to $destination"
 	fi
 }
 
