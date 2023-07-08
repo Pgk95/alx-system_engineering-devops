@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# configures Nginx to listen on port 80 of all active IPv4 IPs
+
+apt-get update
+apt-get install -y nginx
+
+server_ip=$(hostname -I | awk '{print $1}')
+
+config_file="/etc/nginx/sites-available/default"
+echo "" > "$config_file"
+
+for ip in $active_ips
+do
+	echo "server {
+		listen $ip:80;
+		server_name _;
+
+		location / {
+			# .....
+		}
+}" >> "$config_file"
+done
+
+service nginx restart
