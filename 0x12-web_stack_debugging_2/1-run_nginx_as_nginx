@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script Fixes a nginx web server to run as nginx user.
+
+nginx_conf="/etc/nginx/nginx.conf"
+
+sed -i 's/^user .*$/user nginx;/' "$nginx_conf"
+
+sed -i '/^ *listen / s/[^;]*;/listen 8080;/g' "$nginx_conf"
+
+service nginx restart
