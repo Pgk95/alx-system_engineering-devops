@@ -12,7 +12,7 @@ def top_ten(subreddit):
     url = "https://api.reddit.com/r/{}/hot/.json?limit=10".format(subreddit)
     response = requests.get(url)
     if response.status_code != 200:
-        print("Error getting top posts: {}".format(response.status_code))
+        print("None")
         return
 
     response_json = json.loads(response.content)
