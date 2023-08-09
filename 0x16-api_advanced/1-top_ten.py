@@ -2,7 +2,6 @@
 """Queries a given subreddit"""
 
 import requests
-import json
 
 
 def top_ten(subreddit):
