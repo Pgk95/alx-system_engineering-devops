@@ -1,11 +1,11 @@
-# This manifest abes you to login with a user and open a file.
+# This manifest ables fixing high demand of files.
 
-exec { 'increase-hard-file-limit-for-holberton-user':
-  command => 'sed -i '/holberton hard/s/5/50000/" /etc/security/limits.conf',
-  path    => '/usr/local/bin/:/bin/'
+exec { 'Change':
+  command => 'sudo sed -i 's/nofile 7/nofile 70000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/',
 }
 
-exec { 'increase-soft-file-limit-for-holberton-user':
-  command => 'sed -i '/holberton soft/s/4/50000/" /etc/security/limits.conf',
-  path    => '/usr/local/bin/:/bin/'
+exec { 'Replace':
+  command => 'sudo sed -i 's/nofile 6/nofile 60000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/',
 }
